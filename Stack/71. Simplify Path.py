@@ -10,13 +10,10 @@ class Solution:
                 if stack:
                     stack.pop()
             else:
+                stack.append('/')
                 stack.append(content)
-        print(stack)
-        
-        s = '' 
+ 
         if stack:
-            for i in stack:
-                s += '/' + i
-            return s
+            return ''.join(stack)
         else:
             return '/'
