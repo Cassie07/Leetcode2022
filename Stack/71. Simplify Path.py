@@ -11,7 +11,6 @@ class Solution:
                     stack.pop()
             else:
                 stack.append(content)
-        print(stack)
         
         s = '' 
         if stack:
