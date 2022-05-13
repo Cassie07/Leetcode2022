@@ -1,4 +1,4 @@
-# Merge interval
+# Merge interval: slow
 class Solution:
     def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:
                 
@@ -21,39 +21,39 @@ class Solution:
         return res  
             
             
-# Two pointers
-# class Solution:
-#     def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:
-#             interval1 = firstList[i]
-#             interval2 = secondList[j]
+# Two pointers : faster
+class Solution:
+    def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:
+            interval1 = firstList[i]
+            interval2 = secondList[j]
             
-#             s1,e1 = interval1
-#             s2,e2 = interval2
+            s1,e1 = interval1
+            s2,e2 = interval2
 
-#             if e1 < s2:
-#                 i += 1
-#             elif e2 < s1:
-#                 j += 1
-#             else:   
-#                 if s1 < s2:
-#                     res.append([s2,min(e2,e1)])
-#                     if e2 < e1:
-#                         j += 1
-#                     else:
-#                         i += 1
-#                 elif s2 < s1:
-#                     res.append([s1,min(e2,e1)])
-#                     if e1 < e2:
-#                         i += 1
-#                     else:
-#                         j += 1
-#                 else:
-#                     res.append([s1, min(e2,e1)])
-#                     if e1 > e2:
-#                         j += 1
-#                     elif e1 < e2:
-#                         i += 1
-#                     else:
-#                         i += 1
-#                         j += 1          
-#         return res
+            if e1 < s2:
+                i += 1
+            elif e2 < s1:
+                j += 1
+            else:   
+                if s1 < s2:
+                    res.append([s2,min(e2,e1)])
+                    if e2 < e1:
+                        j += 1
+                    else:
+                        i += 1
+                elif s2 < s1:
+                    res.append([s1,min(e2,e1)])
+                    if e1 < e2:
+                        i += 1
+                    else:
+                        j += 1
+                else:
+                    res.append([s1, min(e2,e1)])
+                    if e1 > e2:
+                        j += 1
+                    elif e1 < e2:
+                        i += 1
+                    else:
+                        i += 1
+                        j += 1          
+        return res
