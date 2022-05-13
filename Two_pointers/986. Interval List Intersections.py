@@ -24,6 +24,12 @@ class Solution:
 # Two pointers: faster
 class Solution:
     def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:
+        i, j = 0,0
+        
+        res = []
+        
+        while i<len(firstList) and j<len(secondList):
+            
             interval1 = firstList[i]
             interval2 = secondList[j]
             
